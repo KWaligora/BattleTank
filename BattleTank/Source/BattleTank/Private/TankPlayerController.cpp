@@ -13,6 +13,14 @@ void ATankPlayerController::BeginPlay() {
 	}
 }
 
+void ATankPlayerController::Tick(float Deltatime) {
+	Super::Tick(Deltatime);
+}
+
 ATank* ATankPlayerController::GetControlledTank() const {
 	return Cast<ATank>(GetPawn());
+}
+
+void ATankPlayerController::AimTowardsCrosshair() {
+	if (!GetControlledTank()) { return; }
 }
